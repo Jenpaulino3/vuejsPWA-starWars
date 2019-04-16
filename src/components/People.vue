@@ -5,10 +5,10 @@
                 {{ value.name }}
             </p>
         </div>
-        <button v-if="person === null" v-on:click="getRandomPerson">
+        <button v-if="people !== null && person === null" v-on:click="getRandomPerson">
             Select to randomize a Star Wars person details
         </button>
-        <button v-else v-on:click="getRandomPerson">
+        <button v-if="person !== null" v-on:click="getRandomPerson">
             Let's do it again
         </button>
         <div v-if="person !== null">
@@ -18,13 +18,18 @@
                 </p>
             </div>
         </div>
+        <GoBack/>
     </div>
 </template>
 
 <script>
+import GoBack from '@/components/GoBack'
 import axios from 'axios'
 export default {
     name: 'People',
+    components: {
+        GoBack
+    },
     data () {
         return {
             people: null,

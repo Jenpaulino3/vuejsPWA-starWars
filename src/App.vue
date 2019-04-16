@@ -69,4 +69,10 @@ header span a {
   width: 600px;
 }
 
+button {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 12px;
+}
+
 </style>

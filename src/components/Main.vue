@@ -8,7 +8,9 @@
         </router-link>
       </li>
       <li>
-        <p>Films</p>
+        <router-link to="/films">
+          <p>Films</p>
+        </router-link>
       </li>
       <li>
         <p>Starships</p>
