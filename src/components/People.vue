@@ -1,5 +1,7 @@
 <template>
     <div>
+        <h2>People</h2>
+        <p>A list of people will display offline soon</p>
         <div v-if="people !== null">
             <p v-for="(value, key) in people">
                 {{ value.name }}
