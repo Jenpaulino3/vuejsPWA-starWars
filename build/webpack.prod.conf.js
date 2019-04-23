@@ -108,7 +108,17 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'dist/',
+      // runtimeCaching: [
+      //   {
+      //     urlPattern: /^https:\/\/swapi\.co\/api\/people/,
+      //     handler: 'cacheFirst'
+      //   },
+      //   {
+      //     urlPattern: /^https:\/\/swapi\.co\/api\/people\/id/,
+      //     handler: 'cacheFirst'
+      //   },
+      // ]
     })
   ]
 })

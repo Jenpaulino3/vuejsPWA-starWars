@@ -1,7 +1,9 @@
 <template>
     <div>
         <h2>People</h2>
-        <p>A list of people will display offline soon</p>
+        <div v-if="people === null">
+            <p>{{ displayText }}</p>
+        </div>
         <div v-if="people !== null">
             <p v-for="(value, key) in people">
                 {{ value.name }}
@@ -35,12 +37,16 @@ export default {
     data () {
         return {
             people: null,
-            person: null
+            person: null,
+            displayText: null
         }
     },
-    mounted: async function () {
+    created: async function () {
         let people = await axios.get('https://swapi.co/api/people/')
         this.people = people.data.results
+    },
+    mounted: function () {
+        this.people === null ? 'A list of people will not display' : ''
     },
     methods: {
         async getRandomPerson () {

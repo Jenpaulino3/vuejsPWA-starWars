@@ -37,8 +37,9 @@ body {
 }
 
 main {
+  max-width: 600px;
+  margin: 50px auto;
   text-align: center;
-  margin-top: 40px;
 }
 
 header {
@@ -66,7 +67,7 @@ header span a {
 }
 
 .headerImg {
-  width: 600px;
+  width: 100%;
 }
 
 button {
