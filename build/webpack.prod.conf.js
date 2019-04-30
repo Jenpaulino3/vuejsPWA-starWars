@@ -109,16 +109,16 @@ const webpackConfig = merge(baseWebpackConfig, {
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
       minify: true,
       stripPrefix: 'dist/',
-      // runtimeCaching: [
-      //   {
-      //     urlPattern: /^https:\/\/swapi\.co\/api\/people/,
-      //     handler: 'cacheFirst'
-      //   },
-      //   {
-      //     urlPattern: /^https:\/\/swapi\.co\/api\/people\/id/,
-      //     handler: 'cacheFirst'
-      //   },
-      // ]
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/swapi\.co\/api\/people/,
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /^https:\/\/swapi\.co\/api\/people\/id/,
+          handler: 'cacheFirst'
+        },
+      ]
     })
   ]
 })
