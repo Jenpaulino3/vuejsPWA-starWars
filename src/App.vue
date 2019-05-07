@@ -88,13 +88,14 @@ button {
 }
 
 .offline p {
-  font-size: 28px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .offlineIcon {
-  height: 50px;
+  height: 30px;
   margin-left: 2px;
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 
 </style>
