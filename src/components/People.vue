@@ -9,7 +9,7 @@
                 {{ value.name }}
             </p>
         </div>
-        <button v-if="people !== null && person === null" v-on:click="getRandomPerson">
+        <!-- <button v-if="people !== null && person === null" v-on:click="getRandomPerson">
             Select to randomize a Star Wars person details
         </button>
         <button v-if="person !== null" v-on:click="getRandomPerson">
@@ -21,7 +21,7 @@
                     {{ key.charAt(0).toUpperCase() + key.slice(1) }}: {{ value }}
                 </p>
             </div>
-        </div>
+        </div> -->
         <GoBack/>
     </div>
 </template>
