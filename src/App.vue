@@ -1,23 +1,47 @@
 <template>
-  <div id="app">
-    <header>
-      <span>
-        <router-link to="/">Star Wars Shenanigans</router-link>
-      </span>
-    </header>
-    <main>
-      <img class="headerImg" :src="starWars"/>
-      <router-view></router-view>
-    </main>
-  </div>
+  <v-offline
+    online-class="online"
+    offline-class="offline"
+    @detected-condition="amIOnline">
+    <template v-slot:[onlineSlot] :slot-name="onlineSlot">
+      <p>( Online: {{ onLine }} )</p>
+      <div id="app">
+        <header>
+          <span>
+            <router-link to="/">Star Wars Shenanigans</router-link>
+          </span>
+        </header>
+        <main>
+          <img class="headerImg" :src="starWars"/>
+          <router-view></router-view>
+        </main>
+      </div>
+    </template>
+    <template v-slot:[offlineSlot] :slot-name="offlineSlot">
+      Why isn't this text displaying when offline?
+    </template>
+  </v-offline>
 </template>
 
 <script>
+import VOffline from 'v-offline'
 export default {
   name: 'app',
+  components: {
+    VOffline
+  },
   data () {
     return {
-      starWars: require('../static/img/star-wars.jpg')
+      onLine: null,
+      onlineSlot: 'online',
+      offlineSlot: 'offline',
+      starWars: require('../static/img/star-wars.jpg'),
+      offlineIcon: require('../static/img/offline_icon.svg')
+    }
+  },
+  methods: {
+    amIOnline(e) {
+      this.onLine = e
     }
   }
 }
@@ -75,5 +99,14 @@ button {
   font-size: 14px;
   padding: 12px;
 }
+
+/* .offline {
+  background-color: #fc9842;
+  background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+}
+.online {
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+} */
 
 </style>

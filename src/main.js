@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+Vue.component('VOffline', require('v-offline'))
 
 /* eslint-disable no-new */
 new Vue({
