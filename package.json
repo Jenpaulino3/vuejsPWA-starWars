@@ -10,8 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "v-offline": "^1.1.0",
     "vue": "^2.5.2",
+    "vue-offline": "^2.0.8",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

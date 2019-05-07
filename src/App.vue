@@ -6,6 +6,12 @@
       </span>
     </header>
     <main>
+      <div v-if="isOffline" class="offline">
+        <p>
+          You're offline
+          <img class="offlineIcon" :src="offlineIcon"/>
+        </p>
+      </div>
       <img class="headerImg" :src="starWars"/>
       <router-view></router-view>
     </main>
@@ -17,7 +23,8 @@ export default {
   name: 'app',
   data () {
     return {
-      starWars: require('../static/img/star-wars.jpg')
+      starWars: require('../static/img/star-wars.jpg'),
+      offlineIcon: require('../static/img/offline_icon.svg')
     }
   }
 }
@@ -74,6 +81,20 @@ button {
   text-transform: uppercase;
   font-size: 14px;
   padding: 12px;
+}
+
+.offline {
+  margin-bottom: 50px;
+}
+
+.offline p {
+  font-size: 28px;
+}
+
+.offlineIcon {
+  height: 50px;
+  margin-left: 2px;
+  margin-bottom: -20px;
 }
 
 </style>

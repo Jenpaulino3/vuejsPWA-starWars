@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueOffline from 'vue-offline'
 
 Vue.config.productionTip = false
+Vue.use(VueOffline)
 
 /* eslint-disable no-new */
 new Vue({
